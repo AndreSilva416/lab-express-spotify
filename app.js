@@ -49,10 +49,15 @@ app.get("/", (req, res, next) => {
     .catch(err => console.log('The error while searching artists occurred: ', err));
   });
 
-  
-
-
-
+  app.get('/albums/:artistId', (req, res, next) => {
+    spotifyApi.getArtistAlbums()
+    .then(() => {
+        res.render("albums.hbs")
+    })
+    .catch(();) => {
+        
+    })
+  });
 
 
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
